@@ -1,0 +1,60 @@
+.chart-wrap{
+  height: 650px;
+  width: 300px;
+  padding-left: 325px;
+}
+
+.chart-wrap .grid{
+  position:relative;
+  height:100%;
+  width: 100%;
+  padding: 5px 0 5px 0;
+  background-color: 2px solid #aaa;
+  background-image: repeating-linear-gradient(90deg,transparent, transparent 14%, black 15%)
+}
+
+.chart-wrap .bar{
+  width: var(--bar-value);
+  height: 100px;
+  background-color: #F5F74A;
+  margin: 30px 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.chart-wrap.vertical .grid{
+  transform: translateY(-175px) translateX(175px) rotate(-90deg);
+}
+
+.chart-wrap .bar::after{
+  content: attr(date-name);
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px;  
+  margin-left: 100%;
+}
+
+.chart-wrap.vertical .grid .bar::after{
+  transform:translateY(-50%) rotate(60deg);
+  display:block;
+}
+
+.chart-wrap .title{
+  text-align: center;
+  white-space: nowrap;
+}
+
+.chart-wrap .grid::before{
+  content:"0%";
+  position: absolute;
+  transform:rotate(90deg);
+  left:-0.5px;
+  top:-1.5px;
+}
+
+.chart-wrap .grid::after{
+  content: "100%";
+  position: absolute;
+  transform:rotate(90deg);
+  right: -1.5px;
+  top:-1.5px;
+}
